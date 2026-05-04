@@ -1,0 +1,116 @@
+# =====================================================================
+# Secrets & credentials — NEVER commit anything in here
+# =====================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets.json
+credentials.json
+service-account*.json
+*.local
+
+# =====================================================================
+# Python
+# =====================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test / coverage / type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =====================================================================
+# Node / Frontend
+# =====================================================================
+node_modules/
+dist/
+build/
+.vite/
+.parcel-cache/
+.next/
+.nuxt/
+.cache/
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =====================================================================
+# Editors / IDEs
+# =====================================================================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+
+# =====================================================================
+# OS junk
+# =====================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =====================================================================
+# Logs / runtime
+# =====================================================================
+*.log
+logs/
+*.pid
+*.seed
+
+# =====================================================================
+# Local databases / dumps (often contain real user data)
+# =====================================================================
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.sql
+
+# =====================================================================
+# Project-specific
+# =====================================================================
+CLAUDE.md
