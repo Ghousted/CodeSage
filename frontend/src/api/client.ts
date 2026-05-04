@@ -1,4 +1,8 @@
-const BASE = "/api";
+// In dev, requests go to "/api" and the Vite proxy forwards them to localhost:8000.
+// In prod, set VITE_API_BASE_URL to the deployed backend's full origin
+// (e.g. https://username-codesage.hf.space). The "/api" suffix is appended below.
+const API_ORIGIN = import.meta.env.VITE_API_BASE_URL?.replace(/\/$/, "") ?? "";
+const BASE = `${API_ORIGIN}/api`;
 const DEFAULT_TIMEOUT_MS = 60_000;
 
 export interface FileRecord {
