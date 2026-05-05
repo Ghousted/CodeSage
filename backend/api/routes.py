@@ -100,10 +100,10 @@ def _owner_repo(repo_url: str) -> tuple[str, str]:
 
 # -------------------- Background indexing --------------------
 
-def _safe_summary(repo_path: str) -> str:
+def _safe_summary(repo_path: str, file_paths: list[str]) -> str:
     """Generate the project summary, swallowing failures so they don't sink the job."""
     try:
-        return generate_summary(repo_path)["summary"]
+        return generate_summary(repo_path, file_paths)["summary"]
     except Exception as exc:
         logger.warning("Summary generation failed: %s", exc)
         return "(Summary unavailable — LLM call did not return in time.)"
@@ -137,7 +137,7 @@ def _run_indexing(job_id: str, repo_url: str) -> None:
         # Kick off the LLM-bound summary in parallel — it has nothing to do with
         # embedding or indexing and is usually the longest single network call.
         with ThreadPoolExecutor(max_workers=2) as bg:
-            summary_future = bg.submit(_safe_summary, repo_path)
+            summary_future = bg.submit(_safe_summary, repo_path, file_paths)
             structure_future = bg.submit(analyze_structure, repo_path, file_paths)
 
             job_store.update(job_id, stage="embedding")

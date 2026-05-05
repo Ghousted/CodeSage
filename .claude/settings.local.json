@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python -m py_compile \"c:\\\\Users\\\\franc\\\\OneDrive\\\\Desktop\\\\CodeSage\\\\backend\\\\core\\\\summarizer.py\" \"c:\\\\Users\\\\franc\\\\OneDrive\\\\Desktop\\\\CodeSage\\\\backend\\\\api\\\\routes.py\" 2>&1)",
+      "PowerShell(if \\($?\\) { \"OK - both files compile\" })"
+    ]
+  }
+}
