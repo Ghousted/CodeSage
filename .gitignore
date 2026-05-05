@@ -113,4 +113,12 @@ logs/
 # =====================================================================
 # Project-specific
 # =====================================================================
+
+# Claude / AI assistant artifacts — never commit
 CLAUDE.md
+.claude/
+.claude.json
+.cursorrules
+.cursor/
+.aider*
+.continue/
